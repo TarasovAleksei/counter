@@ -5,7 +5,7 @@ import {Button} from "./Button";
 export type CounterPropsType = {
     value: number|string,
     addOne: () => void,
-    resetCounter: () => void,
+    resetCounter: (minValue:number) => void,
     maxValue:number,
     minValue:number,
     error:boolean,
@@ -13,8 +13,6 @@ export type CounterPropsType = {
 }
 
 export const Counter: React.FC<CounterPropsType> = ({value, addOne, resetCounter, maxValue, minValue, error, errorForSetButton}) => {
-    const plusOne: () => void = () => addOne()
-    const resetValue: () => void = () => resetCounter()
     const conditionForTitle: boolean = value < maxValue
     const conditionForPlusOne: boolean = value >= maxValue||errorForSetButton
     const conditionForReset: boolean = value === minValue||errorForSetButton
@@ -27,9 +25,9 @@ export const Counter: React.FC<CounterPropsType> = ({value, addOne, resetCounter
                 <div className={classNameForTitle}>{value}</div>
             </div>
             <div className={classes.buttons}>
-                <Button titleButton={'+1'} onClick={plusOne} condition={conditionForPlusOne}
+                <Button titleButton={'+1'} onClick={()=>{addOne()}} condition={conditionForPlusOne}
                         className={classNameForPlusOne}/>
-                <Button titleButton={'reset'} onClick={resetValue} condition={conditionForReset}
+                <Button titleButton={'reset'} onClick={()=>resetCounter(minValue)} condition={conditionForReset}
                         className={classNameForReset}/>
             </div>
         </div>

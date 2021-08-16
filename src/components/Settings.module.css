@@ -15,21 +15,33 @@
     height: 100px;
     border-radius: 5px;
     border: 3px solid #8df3a5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
 }
-.title {
+.settingContent {
     display: flex;
     color: #8df3a5;
-    font-size: 30px;
-    font-weight: 700;
+    margin-top: 15px;
+    margin-left: 15px;
 }
-.titleRed {
-    color: #f67272;
-    font-size: 50px;
+.settingContent h3 {
+    width: 150px;
+}
+.input {
+    width: 70px;
+    border: 1px solid #8df3a5;
+    border-radius: 5px;
+    text-align: center;
     font-weight: 700;
+    outline: none;
+}
+.inputError {
+    width: 70px;
+    background-color: #f67272;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 700;
+    outline: none;
 }
 .buttons {
     margin-top: 20px;
@@ -42,6 +54,7 @@
     border: 3px solid #8df3a5;
     width: 250px;
     height: 50px;
+    cursor: pointer;
 }
 .btn {
     margin: 5px;
@@ -53,6 +66,7 @@
     border:none;
     font-size: 20px;
     font-weight: 700;
+    cursor: pointer;
 }
 .btnDisabled {
     margin: 5px;
@@ -65,7 +79,9 @@
     opacity: 0.5;
     font-size: 20px;
     font-weight: 700;
+    cursor: pointer;
 }
 .btn:nth-child(2).btnDisabled:nth-child(2){
     margin-left: 10px;
+    cursor: pointer;
 }
